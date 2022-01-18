@@ -1,0 +1,220 @@
+.layout3{
+    display:grid;
+    grid-template-columns: [c0] 5% [c1] 15% [c2] auto [c3] 15% [c4] 5% [c5];
+    grid-template-rows: [r0] 5% [r1] 20% [r2] 50% [r3] 20% [r4] 5% [r5]; 
+    height: 1000px;
+    width: 1000px;
+
+    background-color: dimgray;
+}
+
+.header{
+    display:grid;
+    grid-column: c1/c4;
+    grid-row: r1/r2;
+    background-color: bisque;
+
+    grid-template-columns: [hc0]auto [hc1]40% [hc2]auto [hc3];
+    grid-template-rows: auto;
+    border-radius: 10px;
+}
+
+.header-logo{ 
+    display: grid;
+    grid-column: hc0/hc1;
+    grid-row: auto;
+    height: 50px;
+    background-color: blue;
+    margin: 0 0 0 1%;
+
+    border-radius:10px;
+}
+
+.header-links{
+    display:grid;
+    grid-column: hc2/hc3;
+    grid-row: auto;
+
+    height: 50px;
+    background-color: brown;
+    margin: 0 1% 0 0 ;
+    border-radius: 10px;
+}
+
+.header-search{
+
+    display:grid;
+    grid-column: hc2/hc3;
+    grid-row: auto;
+
+    height: 50px;
+    background-color: darkgoldenrod;
+
+    margin: 1% 1% 0 0;
+    border-radius: 10px;
+}
+
+.navBarRight{
+    display:grid;
+    grid-column:c3/c4;
+    grid-row: r2/r3;
+
+    background-color: cadetblue;
+    margin: 1% 1% 0 0;
+
+    border-radius: 10px;
+    align-items: stretch;
+
+}
+
+.nBR-Navigation{
+    display:flex;
+    margin:10%;
+
+    height: 100px;
+    width: 100px;
+    align-self: center;
+
+    background-color:coral ;
+    border-radius:10px;
+}
+
+.main{
+    display:grid ;
+
+    grid-column: c2/c3;
+    grid-row:r2/r3;
+
+    background-color: purple;
+    border-radius:10px;
+    margin:1%;
+
+}
+
+.navBarLeft{
+    display:grid;
+
+    grid-column:c1/c2;
+    grid-row:r2/r3;
+
+    background-color:darkslateblue;
+    border-radius:10px;
+    margin:1% 0 1% 1%;
+    
+
+}
+
+.nBL-Promotion{
+    display:flex;
+    margin:10%;
+
+    height: 100px;
+    width: 100px;
+
+    background-color:brown;
+    align-self: center;
+
+    border-radius: 10px;
+}
+
+
+.nBL-Banners{
+    display:flex;
+    margin:10%;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: yellowgreen;
+    align-self:center;
+
+    border-radius: 10px;
+}
+
+.nBL-Banners:hover{
+    display:flex;
+    margin:10%;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: white;
+    align-self:center;
+
+    border-radius: 10px;
+}
+
+.nBL-Advt{
+    display:flex;
+    margin:10%;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: white;
+    color:black;
+
+    align-self:center;
+    
+    border-radius:10px;
+}
+
+.footer{
+    display:grid;
+    grid-column: c1/c4;
+    grid-row:r3/r4;
+
+    grid-template-columns: [col0] 33% [col1] 33% [col2] 33% [col3];
+    grid-template-rows: auto;
+
+    margin-top: 1%;
+    border-radius: 10px;
+    background-color: violet;
+
+
+}
+
+.footer-Copyright{
+    display:grid;
+    grid-column: col0/col1;
+    grid-row: auto;
+  
+    height: 100px;
+    width: 100px;
+
+    background-color: tan;
+    align-self: center;
+    margin:10%;
+    border-radius:10px;
+}
+
+.footer-Contact{
+    display:grid;
+    grid-column: col1/col2;
+    grid-row:auto;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: cornflowerblue;
+    align-self:center;
+    border-radius: 10px;
+    margin:10%;
+
+}
+
+.footer-Links{
+
+    display:grid;
+    grid-column: col2/col3;
+    grid-row: auto;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: springgreen;
+
+    align-self: center;
+    margin:10%;
+    border-radius:10px;
+}
