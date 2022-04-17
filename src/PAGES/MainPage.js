@@ -23,7 +23,7 @@ function MainPage() {
     const useStyles = makeStyles((theme) => ({
         root: {
             ...theme.typography.button,
-            backgroundColor: theme.palette.background.paper,
+            backgroundColor: 'inherit',
             padding: theme.spacing(1),
         },
     }));
@@ -35,13 +35,11 @@ function MainPage() {
         < >
             <div class="layout1-flex">
 
-                <TAppBar />
+                <TAppBar   />
 
                 <div class="flex-row">
 
                     <img src={slide1} class='sliderimg'></img>
-                    <img src={slide2} class='sliderimg'></img>
-                    <img src={slide3} class='sliderimg'></img>
 
 
                 </div>
@@ -66,20 +64,20 @@ function MainPage() {
                 <div class="footer">
 
                     <div >
-                        <h1>c1</h1>
-                        <h1>asdasd</h1>
-                        <h1>asdasd</h1>
+                        <h1>Sayfalar</h1>
+                        <h1>Ana Sayfa</h1>
+                        <h1>Haftanın ürünleri</h1>
 
                     </div>
 
                     <div >
-                        <h1>c2</h1>
-                        <h1>asdasd</h1>
+                        <h1>Merhaba !</h1>
+                        <h1>Bize Ulaşın</h1>
 
                     </div>
 
                     <div >
-                        <h1>c3</h1>
+                        <h1>Hakkımızda</h1>
                     </div>
 
                 </div>

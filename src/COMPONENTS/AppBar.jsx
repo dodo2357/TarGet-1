@@ -24,13 +24,14 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-
+import { useHistory } from 'react-router-dom';
 
 
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+    
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -111,6 +112,8 @@ export default function TAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  const history = useHistory();
+  
     //navbar functions
   
     const [state, setState] = React.useState({
@@ -136,15 +139,15 @@ export default function TAppBar() {
       >
         <List>
           {['Meyveler', 'Sebzeler', 'Kuruyemiş', 'Üreticiler'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} onClick= {() =>history.push(`/${text}`)  }>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {['Hakkımızda', 'Bize Ulaşın', 'Blog'].map((text) => (
-            <ListItem button key={text}>
+          {['Hakkımızda', 'BizeUlaşın', 'Blog'].map((text) => (
+            <ListItem button key={text} onClick={() => history.push(`/${text}`)}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -207,22 +210,6 @@ export default function TAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
@@ -239,8 +226,8 @@ export default function TAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar position="static" color = 'transparents'> 
+        <Toolbar >
            
           <IconButton
             edge="start"

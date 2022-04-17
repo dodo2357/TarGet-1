@@ -1,11 +1,10 @@
 .layout1{
     display:grid; 
-    grid-template-columns: [c0] 10% [c1] 20% [c2] 60% [c3] 10%[c4];
-    grid-template-rows: [r0]5% [r1]10% [r2]auto [r3]auto [r4]5% [r5];
+    grid-template-columns: [c0] 10% [c1] 20% [c2] 60% [c3] 10% [c4];
+    grid-template-rows: [r0] 5% [r1] 10% [r2] auto [r3] auto [r4] 5% [r5];
     height: 1000px;
     width: 1000px;  
-    background-color: azure;  
-    
+    background-color: azure;    
 }
 
 .layout1-flex{
