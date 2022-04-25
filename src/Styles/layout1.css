@@ -1,91 +1,78 @@
-.layout1{
-    display:grid; 
-    grid-template-columns: [c0] 10% [c1] 20% [c2] 60% [c3] 10% [c4];
-    grid-template-rows: [r0] 5% [r1] 10% [r2] auto [r3] auto [r4] 5% [r5];
-    height: 1000px;
-    width: 1000px;  
-    background-color: azure;    
+.layout1 {
+  display: grid;
+  grid-template-columns: [c0] 10% [c1] 20% [c2] 60% [c3] 10% [c4];
+  grid-template-rows: [r0] 5% [r1] 10% [r2] auto [r3] auto [r4] 5% [r5];
+  height: 1000px;
+  width: 1000px;
+  background-color: azure;
 }
 
-.layout1-flex{
-    height: 1000px;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    background-color: rgb(245, 203, 149);
+.layout1-flex {
+  height: 1000px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: rgb(245, 203, 149);
 }
 
-
-.flex-row{
-    display:flex;
-    flex-direction: row;
-    gap: 10px;
-    background-color: inherit;
-    justify-content: center;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background-color: inherit;
+  justify-content: center;
 }
 
-
-.flex-row-wrapped{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: inherit;
-    justify-content: center;
+.flex-row-wrapped {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: inherit;
+  justify-content: center;
 }
 
-
-
-
-
-
-.main-flex{
-
-    align-items: stretch;
-    background-color: azure;
-    margin-left:1%;
+.main-flex {
+  align-items: stretch;
+  background-color: azure;
+  margin-left: 1%;
 }
 
-
-.sliderimg{
-    max-width: 500px;
-    max-height: 500px;
-    border-radius: 10px;
-    margin: 1%;
-    
+.sliderimg {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 10px;
+  margin: 1%;
 }
 
+.footer {
+  display: flex;
 
-
-.footer{
-    display:flex;
-    
-    flex-direction: row;
-    align-items: flex-start;
-    border-radius: 10px;
-    margin-top: 1%;
-    background-color: antiquewhite;
-    justify-content: space-between;
-    padding: 1%;
+  flex-direction: row;
+  align-items: flex-start;
+  border-radius: 10px;
+  margin-top: 1%;
+  background-color: antiquewhite;
+  justify-content: space-between;
+  padding: 1%;
 }
 
-.main-page-typo{
-    justify-content: center;
-    
+.main-page-typo {
+  justify-content: center;
 }
 
 .each-slide > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    height: 350px;
-  }
-  
-  .each-slide span {
-    padding: 20px;
-    font-size: 20px;
-    background: #efefef;
-    text-align: center;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}

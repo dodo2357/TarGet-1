@@ -35,7 +35,7 @@ function MainPage() {
         < >
             <div class="layout1-flex">
 
-                <TAppBar   />
+                
 
                 <div class="flex-row">
 

@@ -1,0 +1,7 @@
+.login-register-box {
+  display: flex;
+  height: 500 px;
+  justify-content: center;
+  row-gap: 10%;
+  margin: 5%;
+}
