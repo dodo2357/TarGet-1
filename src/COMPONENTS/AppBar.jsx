@@ -5,13 +5,12 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
-import Badge from "@material-ui/core/Badge";
+
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
+
 import MoreIcon from "@material-ui/icons/MoreVert";
 
 import clsx from "clsx";
@@ -23,6 +22,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
 import { useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -101,8 +101,6 @@ export default function TAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const history = useHistory();
-
   //navbar functions
 
   const [state, setState] = React.useState({
@@ -121,6 +119,7 @@ export default function TAppBar() {
     setState({ ...state, [anchor]: open });
   };
 
+  let history = useHistory();
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -131,11 +130,12 @@ export default function TAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Meyveler", "Sebzeler", "Kuruyemiş", "Üreticiler"].map(
+        {["Anasayfa", "Meyveler", "Sebzeler", "Kuruyemiş", "Üreticiler"].map(
           (text, index) => (
             <ListItem
               button
-              key={text}
+              key={index}
+              text={text}
               onClick={() => history.push(`/${text}`)}
             >
               <ListItemText primary={text} />
@@ -151,6 +151,15 @@ export default function TAppBar() {
           </ListItem>
         ))}
       </List>
+      <Divider/>
+        <List>
+          {["Üretici giriş", 'üretici kayıt'].map((text) => (
+            <ListItem button key={text} onClick={() => history.push(`/${text}`)}>
+              <ListItemText primary={text}/>
+            </ListItem>
+          ))}
+
+        </List>
     </div>
   );
   ///
