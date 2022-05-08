@@ -134,7 +134,7 @@ function UserRegister() {
           </div>
           <div className={classes.root}>
             <Button variant="outlined" onClick={onClick}>
-              Giriş Yapın!
+              Kayıt Ol! 
             </Button>
           </div>
         </form>

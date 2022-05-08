@@ -10,8 +10,8 @@ import UserLogin from "./UserLogin";
 import UserRegister from "./UserRegister";
 import Data from "../API/axios";
 import ProducerLogin from "./ProducerLogin";
-import ProducerSignUp from "./ProducerSignUp";
 import UploadButtons from "../COMPONENTS/UploadButton";
+import SignUp from "./SignUp";
 
 
 export default function RouterPage() {
@@ -29,14 +29,11 @@ export default function RouterPage() {
           <Route exact path="/UserLogin">
             <UserLogin />
           </Route>
-          <Route exact path="/UserRegister">
-            <UserRegister />
-          </Route>
           <Route exact path="/UserSignUp">
-            <ProducerSignUp />
+            <SignUp />
           </Route>
           <Route exact path="/üretici kayıt">
-            <ProducerSignUp />
+            <SignUp />
           </Route>
           <Route exact path="/ProducerLogin">
             <ProducerLogin />
