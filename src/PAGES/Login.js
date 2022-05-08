@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ProducerLogin() {
+function Login() {
   const classes = useStyles();
   const {
     Mail,
@@ -59,18 +59,10 @@ function ProducerLogin() {
             history.push("/");
           }
         
-
-          
-       
       })
       .catch((e) => {
         console.log(e);
       });
-  
-      
-    
-
-  
     };
 
     useEffect(() => {
@@ -79,8 +71,6 @@ function ProducerLogin() {
         setUID(data.uA_Id)
     },[][data])
   
-
-
   return (
     <>
       <div className="login-register-box">
@@ -118,4 +108,4 @@ function ProducerLogin() {
   );
 }
 
-export default ProducerLogin;
+export default Login;

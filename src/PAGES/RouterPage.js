@@ -6,10 +6,8 @@ import TAppBar from "../COMPONENTS/AppBar";
 
 import AddProduct from "./AddProduct";
 import MainPage from "./MainPage";
-import UserLogin from "./UserLogin";
-import UserRegister from "./UserRegister";
-import Data from "../API/axios";
-import ProducerLogin from "./ProducerLogin";
+import Login from "./Login";
+
 import UploadButtons from "../COMPONENTS/UploadButton";
 import SignUp from "./SignUp";
 
@@ -26,20 +24,17 @@ export default function RouterPage() {
           <Route exact path="/Anasayfa">
             <MainPage />
           </Route>
-          <Route exact path="/UserLogin">
-            <UserLogin />
+          <Route exact path="/kullanıcı kayıt">
+            <Login />
           </Route>
-          <Route exact path="/UserSignUp">
+          <Route exact path="/kullanıcı giriş">
             <SignUp />
           </Route>
           <Route exact path="/üretici kayıt">
             <SignUp />
           </Route>
-          <Route exact path="/ProducerLogin">
-            <ProducerLogin />
-          </Route>
           <Route exact path="/üretici giriş">
-            <ProducerLogin />
+            <Login />
           </Route>
           <Route exact path="/AddProduct">
             <AddProduct />
