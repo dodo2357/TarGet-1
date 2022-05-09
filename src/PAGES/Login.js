@@ -75,7 +75,7 @@ function Login() {
     <>
       <div className="login-register-box">
         <form className={classes.root} autoComplete="off">
-          <h1> Merhaba! TarGet'a hoşgeldiniz, lütfen giriş yapın </h1>
+          <h1> Merhaba!!! TarGet'a hoşgeldiniz, lütfen giriş yapın </h1>
           <div className={classes.root}>
             <TextField
               id="standard-basic"
