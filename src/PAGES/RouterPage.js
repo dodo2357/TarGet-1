@@ -7,9 +7,11 @@ import TAppBar from "../COMPONENTS/AppBar";
 import AddProduct from "./AddProduct";
 import MainPage from "./MainPage";
 import Login from "./Login";
+import ProducerProfile from "./ProducerProfile";
 
 import UploadButtons from "../COMPONENTS/UploadButton";
 import SignUp from "./SignUp";
+import ContactForm from "./BizeUlaşın";
 
 
 export default function RouterPage() {
@@ -38,6 +40,12 @@ export default function RouterPage() {
           </Route>
           <Route exact path="/AddProduct">
             <AddProduct />
+          </Route>
+          <Route exact path="/üreticiProfil">
+            <ProducerProfile />
+          </Route>
+          <Route exact path="/bizeUlaşın">
+            <ContactForm/>
           </Route>
           <Route exact path="/deneme">
             <UploadButtons/>
