@@ -9,6 +9,20 @@ function AccountProvider(props) {
   const [Title, setTitle] = useState("");
   const [UID, setUID] = useState();
 
+  const [Name,setName] =useState("");
+  const [Adress,setAdress] = useState("");
+  const [Did,setDid]= useState("");
+  const [pCode,setpCode] = useState("");
+  const [Phone,setPhone] = useState("");
+
+
+  const [DescLName,setDLN] = useState("");
+  const [Image,setImage] = useState([]);
+  
+  
+  
+  
+  
   return (
     <AccountContext.Provider
       value={{
@@ -16,10 +30,28 @@ function AccountProvider(props) {
         Password: Password,
         Title: Title,
         UID: UID,
+
+        Name: Name,
+        Adress: Adress,
+        Did: Did,
+        pCode: pCode,
+        Phone: Phone,
+
+        DescLName:DescLName,
+        Image: Image,
+
         setMail,
         setPassword,
         setTitle,
         setUID,
+        setName,
+        setAdress,
+        setDid,
+        setpCode,
+        setPhone,
+        setDLN,
+        setImage,
+        
       }}
     >
       {props.children}

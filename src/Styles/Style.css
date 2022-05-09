@@ -7,8 +7,30 @@
 }
 
 .profile-edit{
+  
+  margin: 5%;
   display: flex;
-  flex-direction: column;
+  flex-direction:column ;
   row-gap: 20px;
+  justify-content: center;
+
+  width: 30%;
 }
 
+.profile-form{ 
+  display: flex;
+  flex-direction: row;
+
+}
+
+.account-edit{
+
+
+  margin: 5%;
+  display: flex;
+  flex-direction:column ;
+  row-gap: 20px;
+  justify-content: center;
+
+  width: 30%;
+}

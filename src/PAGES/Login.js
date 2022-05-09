@@ -51,7 +51,7 @@ function Login() {
           setData(response.data);
          
           if(response.data.uA_Title =="Producer"){
-            history.push("/deneme");
+            history.push("/üreticiProfili");
   
           }
   
