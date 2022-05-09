@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: 'antiquewhite',
   },
   paper: {
     padding: theme.spacing(3),
@@ -19,13 +20,17 @@ const useStyles = makeStyles((theme) => ({
 
   },
   typo: {
-    color: 'green',
+    
+
+    
+    
+    color: 'black',
   },
 
   img:{
     height:"150px", 
     width:"200px",
-    borderRadius:"10px",
+    borderRadius:"50px",
 
   }
 

@@ -23,7 +23,7 @@ function MainPage() {
     const useStyles = makeStyles((theme) => ({
         root: {
             ...theme.typography.button,
-            backgroundColor: 'inherit',
+            backgroundColor: 'white',
             padding: theme.spacing(1),
         },
     }));
