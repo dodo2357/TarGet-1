@@ -38,8 +38,9 @@ function MainPage() {
                 
 
                 <div class="flex-row">
+                    
 
-                    <img src={slide1} class='sliderimg'></img>
+                
 
 
                 </div>

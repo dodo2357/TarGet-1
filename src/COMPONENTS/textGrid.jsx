@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '10%',
     
     maxWidth: 500,
-    backgroundColor: 'antiquewhite',
+    backgroundColor: 'Cornsilk',
     
 
   },

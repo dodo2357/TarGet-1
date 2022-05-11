@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import TAppBar from "../COMPONENTS/AppBar";
 
-import AddProduct from "./AddProduct";
+import ContactUs from "./ContactUs";
 import MainPage from "./MainPage";
 import Login from "./Login";
 
@@ -36,8 +36,8 @@ export default function RouterPage() {
           <Route exact path="/üretici giriş">
             <Login />
           </Route>
-          <Route exact path="/AddProduct">
-            <AddProduct />
+          <Route exact path="/BizeUlaşın">
+            <ContactUs />
           </Route>
           <Route exact path="/deneme">
             <UploadButtons/>
