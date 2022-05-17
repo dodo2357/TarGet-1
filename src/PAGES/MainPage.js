@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Styles/layout1.css';
 import TAppBar from '../COMPONENTS/AppBar';
-import Slideshow from '../COMPONENTS/Slider';
+
 
 import { makeStyles } from '@material-ui/core';
 
@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core';
 import slide1 from '../DATA/IMAGES/Biber.jpg';
 import slide2 from '../DATA/IMAGES/Domates.jpg';
 import slide3 from '../DATA/IMAGES/Hıyar.jpg';
-
+import Slider from './Slider/Slider';
 import { data } from '../DATA/data.jsx';
 import TextGrid from '../COMPONENTS/textGrid';
 import { Typography } from '@material-ui/core';
@@ -38,12 +38,10 @@ function MainPage() {
                 
 
                 <div class="flex-row">
+
+                    <Slider/>
                     
-
-                
-
-
-                </div>
+               </div>
                 <div className={classes.root} >
                     <Typography>Bu haftanın ürünleri</Typography>
                 </div>
