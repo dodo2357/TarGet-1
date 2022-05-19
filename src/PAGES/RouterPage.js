@@ -4,21 +4,26 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import TAppBar from "../COMPONENTS/AppBar";
 
-import AddProduct from "./AddProduct";
+import ContactUs from "./ContactUs";
 import MainPage from "./MainPage";
 import Login from "./Login";
 import ProducerProfile from "./ProducerProfile";
 
 import UploadButtons from "../COMPONENTS/UploadButton";
 import SignUp from "./SignUp";
+<<<<<<< HEAD
 import ContactForm from "./BizeUlaşın";
 
+=======
+import Footer from "../Footer/Footer";
+>>>>>>> 19bf58045b7bb92af8c488bf84137a0fbd489a0b
 
 export default function RouterPage() {
   return (
     <Router>
       <div>
       <TAppBar/>
+       
         <Switch>
           <Route exact path="/">
             <MainPage />
@@ -38,8 +43,8 @@ export default function RouterPage() {
           <Route exact path="/üretici giriş">
             <Login />
           </Route>
-          <Route exact path="/AddProduct">
-            <AddProduct />
+          <Route exact path="/BizeUlaşın">
+            <ContactUs />
           </Route>
           <Route exact path="/üreticiProfil">
             <ProducerProfile />
@@ -52,6 +57,7 @@ export default function RouterPage() {
           </Route>
         </Switch>
       </div>
+      <Footer/>
     </Router>
   );
 }

@@ -1,9 +1,14 @@
+<<<<<<< HEAD:src/PAGES/BizeUlaşın.js
 import React from 'react';
 import { useState } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> 19bf58045b7bb92af8c488bf84137a0fbd489a0b:src/PAGES/ContactUs.js
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 //import emailjs from 'emailjs-com';
 import 'react-toastify/dist/ReactToastify.min.css';
+import '../Styles/ContactUs.css';
 
 const ContactForm = () => {
   const {
@@ -69,6 +74,7 @@ const ContactForm = () => {
         <div className='row'>
           <div className='col-12 text-center'>
             <div className='contactForm'>
+            <h1 className='text-center'>TarGet Contact Us</h1>
               <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
                 {/* Row 1 of form */}
                 <div className='row formRow'>
