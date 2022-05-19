@@ -10,13 +10,14 @@ import Login from "./Login";
 
 import UploadButtons from "../COMPONENTS/UploadButton";
 import SignUp from "./SignUp";
-
+import Footer from "../Footer/Footer";
 
 export default function RouterPage() {
   return (
     <Router>
       <div>
       <TAppBar/>
+       
         <Switch>
           <Route exact path="/">
             <MainPage />
@@ -44,6 +45,7 @@ export default function RouterPage() {
           </Route>
         </Switch>
       </div>
+      <Footer/>
     </Router>
   );
 }
