@@ -38,7 +38,7 @@ function Login() {
   const history=useHistory();
 
 
-  const onClick = () => {
+  const onClick = () =>  {
       // iki kere tıkladığında gönderiyor 
       //muhtemelen useEffect ile alakalı 
       //buraya göz atacan

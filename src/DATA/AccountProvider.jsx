@@ -20,9 +20,6 @@ function AccountProvider(props) {
   const [Image,setImage] = useState([]);
   
   
-  
-  
-  
   return (
     <AccountContext.Provider
       value={{
