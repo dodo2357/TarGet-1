@@ -189,6 +189,19 @@ export default function TAppBar() {
     handleMobileMenuClose();
   };
 
+  const AccountClick = () => {
+    if(Title == "Producer"){
+      history.push("/üreticiHesabı");
+    }
+
+    if(Title == "Customer"){
+      history.push("/kullanıcıHesabı");
+    }
+
+
+    handleMenuClose();
+  }
+
   const ProfileClick = () => {
     
     if(Title == "Producer"){
@@ -223,7 +236,7 @@ export default function TAppBar() {
     >
       <p>{Mail}</p>
       <MenuItem onClick={ProfileClick}>Profil</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Hesabım</MenuItem>
+      <MenuItem onClick={AccountClick}>Hesabım</MenuItem>
     </Menu>
   );
 

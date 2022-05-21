@@ -4,6 +4,9 @@ import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import "./Slider.css";
 
+import slide3 from '../../DATA/IMAGES/Hıyar.jpg';
+
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
@@ -17,7 +20,7 @@ function Slider() {
       <h1 style={{ textAlign: "center" }}></h1>
       <div className="Slider">
         <Carousel breakPoints={breakPoints}>
-          <Item>One</Item>
+          <Item><img src={slide3} /></Item>
           <Item>Two</Item>
           <Item>Three</Item>
           <Item>Four</Item>
@@ -31,6 +34,4 @@ function Slider() {
   );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Slider />, rootElement);
 export default Slider;

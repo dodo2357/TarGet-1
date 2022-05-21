@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import React from "react";
+import axios from "axios";
 
 const AccountContext = createContext();
 
@@ -20,6 +21,8 @@ function AccountProvider(props) {
   const [Image,setImage] = useState([]);
   
   
+
+
   return (
     <AccountContext.Provider
       value={{

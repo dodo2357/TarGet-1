@@ -32,17 +32,33 @@ function ProducerProfile(props) {
   const [label2, setLabel2] = useState("");
   const [TempPassword, setTempPassword] = useState("");
 
-  let profile= {
-      UA_Email: Mail,
-      UA_Title: Title,
-      UA_Password : Password,
-  }
+  let profile = {
+    UA_Email: Mail,
+    UA_Title: Title,
+    UA_Password: Password,
+  };
+
 
 
   useEffect(() => {
     if (Title === "Producer") {
       setLabel1("Şirket İsmi");
       setLabel2("Hakkınızda");
+      axios
+      .get(`https://localhost:44326/UserAcc/${UID}`)
+      .then(resp => {
+         if(resp != null)
+           {
+             setName(resp.data.p_Name)
+             setDLN(resp.data.p_Description)
+             setAdress(resp.data.p_Adress)
+             setDid(resp.data.d_Id)
+             setpCode(resp.data.p_PostalCode)
+             setPhone(resp.data.p_Phone)
+           }
+     
+      }).catch(e => { console.log(e)});
+
     }
     if (Title === "Customer") {
       setLabel1("İsminiz");
@@ -51,33 +67,33 @@ function ProducerProfile(props) {
   }, []);
 
   const AccountUpdate = () => {
-      
-    if(Password == TempPassword){
-
-    axios
-        .put(`https://localhost:44326/TarGet/UserAcc/${UID}`,profile)
-        .then(response => {
-            if(response.status == 200){
-                alert(response.status + " status updated");
-            } 
-       }).catch(e =>  {
-           alert(e);
-       });
+    if (Password == TempPassword) {
+      axios
+        .put(`https://localhost:44326/TarGet/UserAcc/${UID}`, profile)
+        .then((response) => {
+          if (response.status == 200) {
+            alert(response.status + " status updated");
+          }
+        })
+        .catch((e) => {
+          alert(e);
+        });
     } else {
-        alert("Şifreleriniz uyuşmuyor");
+      alert("Şifreleriniz uyuşmuyor");
     }
-
-
-
   };
 
-  const ProfileUpdate = () => {};
+  console.log(UID, Name);
+
+  const ProfileUpdate = () => {
+
+  };
 
   return (
     <>
       <div className="profile-form">
         <div className="profile-edit">
-        <h2>Profil Bilgilerinizi buradan güncelleyebilirsiniz</h2>
+          <h2>Profil Bilgilerinizi buradan güncelleyebilirsiniz</h2>
           <TextField
             id="standard-basic"
             value={Name}
@@ -119,11 +135,11 @@ function ProducerProfile(props) {
             label="Telefon"
           />
           <Button variant="outlined" onClick={ProfileUpdate}>
-            Profili Güncelle ! 
+            Profili Güncelle !
           </Button>
         </div>
         <div className="account-edit">
-            <h2>Hesap Bilgilerinizi buradan güncelleyebilirsiniz</h2>
+          <h2>Hesap Bilgilerinizi buradan güncelleyebilirsiniz</h2>
           <TextField
             id="standard-basic"
             value={Mail}

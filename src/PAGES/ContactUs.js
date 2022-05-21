@@ -1,9 +1,5 @@
-<<<<<<< HEAD:src/PAGES/BizeUlaşın.js
 import React from 'react';
 import { useState } from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> 19bf58045b7bb92af8c488bf84137a0fbd489a0b:src/PAGES/ContactUs.js
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 //import emailjs from 'emailjs-com';

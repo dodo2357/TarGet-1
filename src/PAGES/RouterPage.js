@@ -11,12 +11,10 @@ import ProducerProfile from "./ProducerProfile";
 
 import UploadButtons from "../COMPONENTS/UploadButton";
 import SignUp from "./SignUp";
-<<<<<<< HEAD
-import ContactForm from "./BizeUlaşın";
+import ContactForm from "./ContactUs";
 
-=======
-import Footer from "../Footer/Footer";
->>>>>>> 19bf58045b7bb92af8c488bf84137a0fbd489a0b
+import Footer from "./Footer/Footer";
+import ProducerAccount from "./ProducerAccount";
 
 export default function RouterPage() {
   return (
@@ -52,12 +50,20 @@ export default function RouterPage() {
           <Route exact path="/bizeUlaşın">
             <ContactForm/>
           </Route>
+          <Route exact path="/üreticiHesabı">
+            <ProducerAccount />
+          </Route>
+          
           <Route exact path="/deneme">
             <UploadButtons/>
           </Route>
+
         </Switch>
+      
       </div>
-      <Footer/>
     </Router>
   );
 }
+
+
+//<Footer/>
