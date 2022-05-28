@@ -13,7 +13,7 @@ import UploadButtons from "../COMPONENTS/UploadButton";
 import SignUp from "./SignUp";
 import ContactForm from "./ContactUs";
 
-import Footer from "./Footer/Footer";
+import Footer from "../COMPONENTS/Footer";
 import ProducerAccount from "./ProducerAccount";
 
 export default function RouterPage() {
@@ -29,16 +29,11 @@ export default function RouterPage() {
           <Route exact path="/Anasayfa">
             <MainPage />
           </Route>
-          <Route exact path="/kullanıcı kayıt">
-            <Login />
-          </Route>
-          <Route exact path="/kullanıcı giriş">
+          
+          <Route exact path="/Kayıt">
             <SignUp />
           </Route>
-          <Route exact path="/üretici kayıt">
-            <SignUp />
-          </Route>
-          <Route exact path="/üretici giriş">
+          <Route exact path="/Giriş">
             <Login />
           </Route>
           <Route exact path="/BizeUlaşın">
@@ -59,7 +54,10 @@ export default function RouterPage() {
           </Route>
 
         </Switch>
+
       
+        <Footer/>
+
       </div>
     </Router>
   );

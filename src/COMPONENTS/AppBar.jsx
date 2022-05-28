@@ -139,7 +139,7 @@ export default function TAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Anasayfa", "Meyveler", "Sebzeler", "Kuruyemiş", "Üreticiler"].map(
+        {["Anasayfa", "Meyve", "Sebze", "Kuruyemiş", "Üreticiler"].map(
           (text, index) => (
             <ListItem
               button
@@ -162,7 +162,7 @@ export default function TAppBar() {
       </List>
       <Divider/>
         <List>
-          {["Üretici giriş", 'üretici kayıt'].map((text) => (
+          {["Giriş", 'Kayıt'].map((text) => (
             <ListItem button key={text} onClick={() => history.push(`/${text}`)}>
               <ListItemText primary={text}/>
             </ListItem>
@@ -190,6 +190,11 @@ export default function TAppBar() {
   };
 
   const AccountClick = () => {
+
+    if(Title == "" || Title== " "){
+      history.push("/Giriş");
+    }
+
     if(Title == "Producer"){
       history.push("/üreticiHesabı");
     }
@@ -203,6 +208,10 @@ export default function TAppBar() {
   }
 
   const ProfileClick = () => {
+    
+    if(Title == "" || Title== " "){
+      history.push("/Giriş")
+    }
     
     if(Title == "Producer"){
 

@@ -77,12 +77,21 @@ function ProducerProfile(props) {
     if (Title === "Producer") {
       setLabel1("Şirket İsmi");
       setLabel2("Hakkınızda");
-      setDisabled(true)
+      setDisabled(false)
+
+      axios 
+    .get(`https://localhost:44326/TarGet/Producer//${Did}`)
+    .then(resp => {
+      //setDistricts(resp.data)
+    })
+
+
+
     }
     if (Title === "Customer") {
       setLabel1("İsminiz");
       setLabel2("Soyisminiz");
-      setDisabled(false)
+      setDisabled(true)
     }
 
     /*
@@ -101,7 +110,7 @@ function ProducerProfile(props) {
 
 
 
-  }, []);
+  }, [Title]);
 
   const AccountUpdate = () => {
     if (Password == TempPassword) {
@@ -233,6 +242,7 @@ function ProducerProfile(props) {
   
   const handleChange2= (event) => {
     setDistrict(event.target.value)
+    setDid(event.target.value)
    }
 
   return (
@@ -246,10 +256,10 @@ function ProducerProfile(props) {
             id="contained-button-file"
             type="file"
             onChange={readFileDataAsBase64}
-            disabled={true}
+            disabled={disabled}
           />
                 <label htmlFor="contained-button-file">
-        <Button variant="outline" color="inherit" component="span" disabled={true} >
+        <Button variant="outline" color="inherit" component="span" disabled={disabled} >
           Resim yükle
         </Button>
         <Button  >Gönder </Button>

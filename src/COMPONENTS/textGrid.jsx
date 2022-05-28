@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   img:{
-    height:"150px", 
-    width:"200px",
+    height:"auto", 
+    width:"auto",
     borderRadius:"50px",
 
   }
