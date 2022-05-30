@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { alpha, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -23,6 +23,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import { AccountContext } from "../DATA/AccountProvider";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -100,7 +101,16 @@ export default function TAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  let history = useHistory();
 
+  const {Mail,Title,Password,UID} = useContext(AccountContext);
+
+  useEffect(() => {
+    if(Mail != null ){
+
+    }
+  },[Mail])
+  
   //navbar functions
 
   const [state, setState] = React.useState({
@@ -119,7 +129,6 @@ export default function TAppBar() {
     setState({ ...state, [anchor]: open });
   };
 
-  let history = useHistory();
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -130,7 +139,7 @@ export default function TAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Anasayfa", "Meyveler", "Sebzeler", "Kuruyemiş", "Üreticiler"].map(
+        {["Anasayfa", "Meyve", "Sebze", "Kuruyemiş", "Üreticiler"].map(
           (text, index) => (
             <ListItem
               button
@@ -153,7 +162,7 @@ export default function TAppBar() {
       </List>
       <Divider/>
         <List>
-          {["Üretici giriş", 'üretici kayıt'].map((text) => (
+          {["Giriş", 'Kayıt'].map((text) => (
             <ListItem button key={text} onClick={() => history.push(`/${text}`)}>
               <ListItemText primary={text}/>
             </ListItem>
@@ -180,6 +189,45 @@ export default function TAppBar() {
     handleMobileMenuClose();
   };
 
+  const AccountClick = () => {
+
+    if(Title == "" || Title== " "){
+      history.push("/Giriş");
+    }
+
+    if(Title == "Producer"){
+      history.push("/üreticiHesabı");
+    }
+
+    if(Title == "Customer"){
+      history.push("/kullanıcıHesabı");
+    }
+
+
+    handleMenuClose();
+  }
+
+  const ProfileClick = () => {
+    
+    if(Title == "" || Title== " "){
+      history.push("/Giriş")
+    }
+    
+    if(Title == "Producer"){
+
+      history.push("/üreticiProfil");
+    }
+  
+    if(Title == "Customer"){
+
+      history.push("/kullanıcıProfil");
+    }
+    
+    handleMenuClose();
+
+  } 
+  
+
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
@@ -195,8 +243,9 @@ export default function TAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <p>{Mail}</p>
+      <MenuItem onClick={ProfileClick}>Profil</MenuItem>
+      <MenuItem onClick={AccountClick}>Hesabım</MenuItem>
     </Menu>
   );
 

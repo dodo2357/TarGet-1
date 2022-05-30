@@ -5,3 +5,45 @@
   row-gap: 10%;
   margin: 5%;
 }
+
+.profile-edit{
+  
+  margin: 5%;
+  display: flex;
+  flex-direction:column ;
+  row-gap: 20px;
+  justify-content: center;
+
+  width: 30%;
+}
+
+.profile-form{ 
+  display: flex;
+  flex-direction: row;
+
+}
+
+.account-edit{
+
+
+  margin: 5%;
+  display: flex;
+  flex-direction:column ;
+  row-gap: 20px;
+  justify-content: center;
+
+  width: 30%;
+}
+
+
+.add-product{
+  display: flex;
+  margin: 5%;
+  flex-direction: column;
+  justify-items: center;
+  width: 500px;
+
+  row-gap: 20px;
+  
+
+}

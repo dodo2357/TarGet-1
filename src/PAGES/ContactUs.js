@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
-import emailjs from 'emailjs-com';
+//import emailjs from 'emailjs-com';
 import 'react-toastify/dist/ReactToastify.min.css';
 import '../Styles/ContactUs.css';
 
@@ -45,13 +46,13 @@ const ContactForm = () => {
       };
 
       // Use emailjs to email contact form data
-      await emailjs.send(
+      /*await emailjs.send(
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
         templateParams,
         process.env.REACT_APP_USER_ID
       );
-
+        */
       // Reset contact form fields after submission
       reset();
       // Display success toast

@@ -1,9 +1,9 @@
 import React from 'react';
 import '../Styles/layout1.css';
-import TAppBar from '../COMPONENTS/AppBar';
-
-
+import {useState, useEffect } from "react"; 
 import { makeStyles } from '@material-ui/core';
+
+import {Paper,Grid} from "@mui/material";
 
 
 import slide1 from '../DATA/IMAGES/Biber.jpg';
@@ -11,14 +11,111 @@ import slide2 from '../DATA/IMAGES/Domates.jpg';
 import slide3 from '../DATA/IMAGES/Hıyar.jpg';
 import Slider from './Slider/Slider';
 import { data } from '../DATA/data.jsx';
-import TextGrid from '../COMPONENTS/textGrid';
+
 import { Typography } from '@material-ui/core';
+import axios from 'axios';
+
+
+
+
+
+ function TextGrid(props) {
+
+    const [producer,setProducer] = useState([])
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+          
+          backgroundColor: 'antiquewhite',
+        },
+        paper: {
+          padding: theme.spacing(3),
+          margin: 'auto',
+          marginTop: '10%',
+          
+          maxWidth: 500,
+          backgroundColor: 'Cornsilk',
+          
+      
+        },
+        typo: {
+          color: 'black',
+        },
+      
+        img:{
+          height:"250px", 
+          width:"50%",
+          borderRadius:"50px",
+      
+        }
+      
+      }));
+
+
+
+    const classes = useStyles();
+    const { ptname, ptdesc, ptunitp, ptunitw, text4 ,img,
+         ptidü, pid
+        
+    } = props;
+
+    useEffect(() => {
+
+        axios
+        .get(`https://localhost:44326/TarGet/Producers/${pid}`)
+        .then(resp => {setProducer(resp.data)
+            console.log(producer)})
+        .then(data => setProducer(data))
+    },[pid])
+
+    
+
+    return (
+      <div className="flex-row-wrapped">
+        <Paper className={classes.paper} elevation={0}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm container>
+              <img className={classes.img} src={img} />
+              
+              <Grid item xs className={classes.typo}>
+                <Typography gutterBottom  variant="subtitle1">
+                  {ptname}
+                </Typography>
+                <Typography gutterBottom variant="subtitle1">
+                  {ptdesc}
+                </Typography>
+                <Typography variant="body2" >
+                  {}
+                </Typography>
+                <Typography variant="body2">
+                  {ptunitp}
+                </Typography>
+                <Typography variant="body2">
+                  {"hebelehübele"}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Paper>
+      </div>
+    );
+  }
+
 
 
 function MainPage() {
 
     // functions that may included will be written here
 
+    const [data,setData] = useState([]);
+
+    useEffect(() => {
+        axios
+        .get("https://localhost:44326/TarGet/Products")
+        .then(resp => setData(resp.data))
+
+    },[])
+    
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -32,7 +129,7 @@ function MainPage() {
     const classes = useStyles();
     return (
 
-        < >
+        <>
             <div class="layout1-flex">
 
                 
@@ -48,17 +145,35 @@ function MainPage() {
                 <div class="flex-row-wrapped">
                     {data.map(data =>
                         <TextGrid
-                            img={data.img}
-                            text0={data.name}
-                            text1={data.description}
-                            text2={data.quantity}
-                            text3={data.price}
+                            img={data.pt_Image}
+                            ptname={data.pt_Name}
+                            ptdesc={data.pt_Description}
+                            ptunitp={data.pt_UnitPrice}
+                            //pt={data.c_Id}
+                            pid={data.p_Id}
                         />
 
                     )}
 
                 </div>
 
+
+
+
+            </div >
+
+        </>
+
+    );
+
+
+}
+
+
+export default MainPage;
+
+
+/*
 
                 <div class="footer">
 
@@ -80,16 +195,4 @@ function MainPage() {
                     </div>
 
                 </div>
-
-
-            </div >
-
-        </>
-
-    );
-
-
-}
-
-
-export default MainPage;
+*/ 

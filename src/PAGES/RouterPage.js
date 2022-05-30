@@ -7,10 +7,14 @@ import TAppBar from "../COMPONENTS/AppBar";
 import ContactUs from "./ContactUs";
 import MainPage from "./MainPage";
 import Login from "./Login";
+import ProducerProfile from "./ProducerProfile";
 
 import UploadButtons from "../COMPONENTS/UploadButton";
 import SignUp from "./SignUp";
-import Footer from "../Footer/Footer";
+import ContactForm from "./ContactUs";
+
+import Footer from "../COMPONENTS/Footer";
+import ProducerAccount from "./ProducerAccount";
 
 export default function RouterPage() {
   return (
@@ -25,27 +29,39 @@ export default function RouterPage() {
           <Route exact path="/Anasayfa">
             <MainPage />
           </Route>
-          <Route exact path="/kullanıcı kayıt">
-            <Login />
-          </Route>
-          <Route exact path="/kullanıcı giriş">
+          
+          <Route exact path="/Kayıt">
             <SignUp />
           </Route>
-          <Route exact path="/üretici kayıt">
-            <SignUp />
-          </Route>
-          <Route exact path="/üretici giriş">
+          <Route exact path="/Giriş">
             <Login />
           </Route>
           <Route exact path="/BizeUlaşın">
             <ContactUs />
           </Route>
+          <Route exact path="/üreticiProfil">
+            <ProducerProfile />
+          </Route>
+          <Route exact path="/bizeUlaşın">
+            <ContactForm/>
+          </Route>
+          <Route exact path="/üreticiHesabı">
+            <ProducerAccount />
+          </Route>
+          
           <Route exact path="/deneme">
             <UploadButtons/>
           </Route>
+
         </Switch>
+
+      
+        <Footer/>
+
       </div>
-      <Footer/>
     </Router>
   );
 }
+
+
+//<Footer/>

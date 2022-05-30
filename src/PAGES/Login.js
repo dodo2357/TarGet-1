@@ -38,7 +38,7 @@ function Login() {
   const history=useHistory();
 
 
-  const onClick = () => {
+  const onClick = () =>  {
       // iki kere tıkladığında gönderiyor 
       //muhtemelen useEffect ile alakalı 
       //buraya göz atacan
@@ -51,7 +51,7 @@ function Login() {
           setData(response.data);
          
           if(response.data.uA_Title =="Producer"){
-            history.push("/deneme");
+            history.push("/üreticiProfil");
   
           }
   

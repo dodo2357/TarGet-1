@@ -1,36 +1,40 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Carousel from "react-elastic-carousel";
-import Item from "./Item";
+import React, { useEffect, useState } from "react";
+import SliderContent from "./SliderContent";
+import Dots from "./Dots";
+import Arrows from "./Arrows";
+import sliderImage from "./SliderImage";
 import "./Slider.css";
 
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
-];
+const len = sliderImage.length - 1;
 
-function Slider() {
+function Slider(props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(activeIndex === len ? 0 : activeIndex + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
   return (
-    <>
-      <h1 style={{ textAlign: "center" }}></h1>
-      <div className="Slider">
-        <Carousel breakPoints={breakPoints}>
-          <Item>One</Item>
-          <Item>Two</Item>
-          <Item>Three</Item>
-          <Item>Four</Item>
-          <Item>Five</Item>
-          <Item>Six</Item>
-          <Item>Seven</Item>
-          <Item>Eight</Item>
-        </Carousel>
-      </div>
-    </>
+    <div className="slider-container">
+      <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
+      <Arrows
+        prevSlide={() =>
+          setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
+        }
+        nextSlide={() =>
+          setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+        }
+      />
+      <Dots
+        activeIndex={activeIndex}
+        sliderImage={sliderImage}
+        onclick={(activeIndex) => setActiveIndex(activeIndex)}
+      />
+    </div>
   );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Slider />, rootElement);
 export default Slider;
